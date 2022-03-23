@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:bvm="clr-namespace:projCustomerSystemMobile.ViewModels"
+             x:Class="projCustomerSystemMobile.MainPage">
+
+    <ContentPage.BindingContext>
+        <bvm:CBindingViewModel/>
+    </ContentPage.BindingContext>
+    
+
+    <StackLayout VerticalOptions="FillAndExpand">
+        <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="0">
+            <Label Text="會員系統 beta 1" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+        </Frame>
+        <Label Text="編號" FontSize="20"/>
+        <Entry x:Name="Entry_id" Text="{Binding current.fld, Mode=TwoWay}"/>
+        <Label Text="姓名" FontSize="20"/>
+        <Entry x:Name="Entry_name" Text="{Binding current.fName, Mode=TwoWay}"/>
+        <Label Text="電話" FontSize="20"/>
+        <Entry x:Name="Entry_phone" Text="{Binding current.fPhone, Mode=TwoWay}"/>
+        <Label Text="電子郵件" FontSize="20"/>
+        <Entry x:Name="Entry_email" Text="{Binding current.fPhone, Mode=TwoWay}"/>
+        <Label Text="地址" FontSize="20"/>
+        <Entry x:Name="Entry_address" Text="{Binding current.fAddress, Mode=TwoWay}"/>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton x:Name="btn_toFirst" Source="first.png" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="btn_toFirst_Clicked"></ImageButton>
+            <ImageButton x:Name="btn_previous" Source="back.png" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="btn_previous_Clicked"></ImageButton>
+            <ImageButton x:Name="btn_next" Source="next.png" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="btn_next_Clicked"></ImageButton>
+            <ImageButton x:Name="btn_toLast" Source="last.png" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="btn_toLast_Clicked"></ImageButton>
+            <ImageButton x:Name="btn_query" Source="search.png" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="btn_query_Clicked"></ImageButton>
+            <ImageButton x:Name="btn_menu" Source="menu.png" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="btn_menu_Clicked"></ImageButton>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
